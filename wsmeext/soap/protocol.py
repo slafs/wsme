@@ -330,6 +330,9 @@ class SoapProtocol(Protocol):
         "soapenc": "http://schemas.xmlsoap.org/soap/encoding/",
     }
 
+    def get_response_contenttype(self, request):
+        return self.content_types[0]
+
     def __init__(self, tns=None, typenamespace=None, baseURL=None,
                  servicename='MyApp'):
         self.tns = tns
